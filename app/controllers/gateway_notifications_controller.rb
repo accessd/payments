@@ -15,8 +15,13 @@ class GatewayNotificationsController < ApplicationController
       @notification.charge.update_attribute(:error, error)
       head :bad_request
     else
+      # success
       @notification.charge.approve unless @notification.charge.ok?
-      render :text => @notification.success_response
+      if @notification.need_response?
+        render text: @notification.success_response
+      else
+        redirect_to root_url
+      end
     end
   end
 

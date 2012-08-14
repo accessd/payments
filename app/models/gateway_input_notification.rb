@@ -17,6 +17,10 @@ class GatewayInputNotification < ActiveRecord::Base
     adapter.complete?
   end
 
+  def need_response?
+    adapter.respond_to?(:success_response)
+  end
+
   def success_response
     adapter.respond_to?(:success_response) ? adapter.success_response : "OK"
   end
