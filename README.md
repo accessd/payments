@@ -1,6 +1,6 @@
 # Payments
 
-Complete MVC solution to accepts charges on your Ruby on Rails site
+Complete MVC solution to accept charges from users on your Ruby on Rails site
 
 ## Installation
 
