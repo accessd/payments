@@ -5,6 +5,7 @@ class Charge < Payment
     store_audit_trail
 
     state :new
+    state :rejected
     state :ok
     state :error
 
@@ -14,6 +15,10 @@ class Charge < Payment
 
     event :failed do
       transition [:new] => :error
+    end
+
+    event :reject do
+      transition [:new, :error] => :rejected
     end
   end
 
