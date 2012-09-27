@@ -19,6 +19,7 @@ Gem::Specification.new do |s|
   s.add_dependency "rails", ">= 3.1"
   s.add_dependency "state_machine-audit_trail"
   s.add_dependency "activemerchant"
+  s.add_dependency "devise"
 
   s.add_development_dependency "sqlite3"
 end
